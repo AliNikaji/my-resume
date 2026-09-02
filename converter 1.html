@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Measurement Converter</title>
+</head>
+<body>
+
+    <h2>Measurement Converter</h2>
+    
+    Enter Inch: <input type="number" id="inchInput" value="3">
+    <button onclick="convert()">Submit</button>
+    
+    <p id="result">Equal to 7.62 cm</p>
+
+    <script>
+        function convert() {
+            var inches = document.getElementById("inchInput").value;
+            var cm = inches * 2.54;
+            document.getElementById("result").innerHTML = "Equal to " + cm + " cm";
+        }
+    </script>
+
+</body>
+</html>

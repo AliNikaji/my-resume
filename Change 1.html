@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>Calculate Change</title>
+</head>
+<body>
+
+    <h2>Calculate Change</h2>
+    
+    Enter Amount: <input type="number" id="amountInput" value="874">
+    <button onclick="calculateChange()">Submit</button>
+    
+    <p id="result"></p>
+
+    <script>
+        function calculateChange() {
+            var amount = document.getElementById("amountInput").value;
+            var notes = [1000, 500, 100, 50, 20, 10, 5, 2, 1];
+            var resultText = "";
+
+            for (var i = 0; i < notes.length; i++) {
+                var count = Math.floor(amount / notes[i]);
+                
+                if (count > 0) {
+                    resultText += count + " of $" + notes[i] + "<br>";
+                    amount = amount % notes[i];
+                }
+            }
+            
+            document.getElementById("result").innerHTML = resultText;
+        }
+    </script>
+
+</body>
+</html>
