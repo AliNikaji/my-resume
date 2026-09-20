@@ -1,5 +1,6 @@
 <html>
 <head>
+<link rel="manifest" href="manifest.json">
 <title>My Resume</title>
 <link href="style.css" rel="stylesheet"/></head>
 <body><div class="card">
@@ -50,5 +51,12 @@ I am responsible and always willing to learn new skills.
 <li>Running</li>
 <li>Reading</li>
 </ul>
-<hr/><p><a href="hobby.html">My Hobbies</a></p></div></body>
+<hr/><p><a href="hobby.html">My Hobbies</a></p></div>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+      .then(() => console.log('Service Worker Registered'));
+  }
+</script>
+</body>
 </html>
